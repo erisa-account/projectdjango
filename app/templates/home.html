@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--<h1>Hello world </h1>-->
+
+
+
+<div class="hero text-white text-center p-5 hero-section">
+  <h1>Find Your Dream Internship</h1>
+  <p class="lead">Explore remote and in-office opportunities in Europe and beyond.</p>
+  <a href="/internships" class="btn btn-light">Browse Internships</a>
+</div>
+
+<div class="container my-4">
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search internships...">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="container">
+  <h2 class="text-center my-4">Featured Internships</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Example card -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Web Developer Intern</h5>
+          <p class="card-text">Company XYZ • Remote • 3 months</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+    </div>
+    <!-- Repeat for more cards -->
+  </div>
+</div>
+
+
+<div class="container my-5 text-center">
+  <h2>Why InternConnect?</h2>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <i class="bi bi-laptop"></i>
+      <h5>Remote Friendly</h5>
+      <p>Browse internships that are fully remote and flexible.</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-lightbulb"></i>
+      <h5>Verified Companies</h5>
+      <p>We ensure every posting is reviewed and legitimate.</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-person-lines-fill"></i>
+      <h5>Easy Application</h5>
+      <p>Apply with one click using your profile and CV.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
