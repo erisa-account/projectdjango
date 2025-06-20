@@ -59,4 +59,26 @@
   </div>
 </div>
 
+
+<div class="container">
+  <h1>Items</h1>
+  <div class="row"> <!--item e marrim nga view i kemi vendosur s atje ketu e marrim pa s in items duhet items qe eshte key te views -->
+    {% comment %}
+    {% endcomment %}
+    {% for item in items%}
+    <div class="col-12 col-md-6 col-lg-4">
+     <div class="card" style="width: 18rem;">
+  <img src="{{item.item_image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{item.item_name}}</h5>
+    <p class="card-text">{{item.item_description}}</p>
+    <a href="{% url 'detailinfopage' item.pk %}" class="btn btn-primary">go somewhere</a>
+  </div>
+</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
 {% endblock %}

@@ -1,4 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Contact </h1>
+
+<div class="container">
+    {% if messages %}
+    {% for message in messages  %}
+    <div id="alertMessage" class="my-5 alert alert-{message.tags}{% if message.tags == 'error' %}
+    bg-danger-subtle text-emphasis-danger {% endif %}"
+     role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %} <!--tregon qe te dhenat nuk jane te rrezikshme i jep browseri leje qe ti vendosi -->
+        <div class="mb-3">
+  <label for="name" class="form-label">Name</label>
+  <input type="text" class="form-control" id="name" name="name">
+</div>
+      <div class="mb-3">
+  <label for="lastname" class="form-label">Last Name</label>
+  <input type="text" class="form-control" id="lastname" name="lastname">
+</div>
+    <div class="mb-3">
+  <label for="email" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+</div>
+<div class="mb-3">
+  <label for="comment" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="comment" rows="3" name="comment" ></textarea >
+</div>
+</div>
+<input type="submit" value="Send" class="btn btn-primary">
+</form>
+<script>
+    document.addEventListener("DOMContentLoaded",
+        function(){
+            const alertMessage = document.getElementById("alertMessage")
+            if(alertMessage){
+                setTimeout(() =>{
+                    const  bsAlert = new bootstrap.Alert(alertMessage)
+                    bsAlert.close()
+            },5000)
+        }
+        
+        
+    })
+    </script>
 {% endblock %}
